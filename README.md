@@ -17,7 +17,7 @@
 ## Текст программы с комментариями
 Программа реализована в двух файлах: заголовочный файл **hangar.h**, включающий класс "Ангар" и описание функций для него, и главный файл **main.cpp**, содержащий функции для выполнения работы.  
   
-[**hangar.h:**](https://github.com/Rigrey/al-lab1/blob/a22d19d2a73770d01b129cc49aef871dd2787ef6/include/hangar.h#L1)
+[**hangar.h:**](https://github.com/Rigrey/al-lab1/blob/main/include/hangar.h#L1)
 ```cpp
 #ifndef HANGAR_H
 #define HANGAR_H
@@ -155,7 +155,7 @@ void customOutput(const Hangar& hangar) {
 
 ```
   
-[**main.cpp:**](https://github.com/Rigrey/al-lab1/blob/a22d19d2a73770d01b129cc49aef871dd2787ef6/dir/main.cpp#L1)
+[**main.cpp:**](https://github.com/Rigrey/al-lab1/blob/main/dir/main.cpp#L1)
 ```cpp
 #include "../include/hangar.h"
 #include <vector>
@@ -239,7 +239,7 @@ int main() {
 ```
 ## Ручной расчет контрольного примера
 
-В файле [**input.txt**](https://github.com/Rigrey/al-lab1/blob/f53617e8c88830a0e741eb884cd814fee2fc77cd/input.txt#L1) содержится данная информация, где первая строка - количество ангаров, первое число каждой последующей строки - ширина, другое - длина:
+В файле [**input.txt**](https://github.com/Rigrey/al-lab1/blob/main/input.txt#L1) содержится данная информация, где первая строка - количество ангаров, первое число каждой последующей строки - ширина, другое - длина:
 ```
 3
 10 20
@@ -258,7 +258,7 @@ int main() {
 
 ## Результаты решения контрольного примера программой
 
-При вводе данных из файла [**input.txt**](https://github.com/Rigrey/al-lab1/blob/f53617e8c88830a0e741eb884cd814fee2fc77cd/input.txt#L1) с указанным содержанием и запуске программы ожидается вывод на экран:  
+При вводе данных из файла [**input.txt**](https://github.com/Rigrey/al-lab1/blob/main/input.txt#L1) с указанным содержанием и запуске программы ожидается вывод на экран:  
 
 ```
 Here is the implemention of Hangar class(V20) with vector 
@@ -305,7 +305,7 @@ Total area of all hangars: 21500 square meters
 
 ```
 
-Также результат будет записан в файл [**output.txt**](https://github.com/Rigrey/al-lab1/blob/f53617e8c88830a0e741eb884cd814fee2fc77cd/output.txt#L1). Его содержимое эквивалентно выводу на экран.
+Также результат будет записан в файл [**output.txt**](https://github.com/Rigrey/al-lab1/blob/main/output.txt#L1). Его содержимое эквивалентно выводу на экран.
 
 ## Выводы по работе
 
