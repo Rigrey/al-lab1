@@ -2,7 +2,7 @@
 
 ## Титульный лист
 
-**Студент:** Михаил Ожогин  
+**Студент:** Ожогин Михаил Александрович  
 **Группа:** ИУ8-24  
 **Преподаватель:** Барыкин Дмитрий Васильевич  
 
@@ -17,7 +17,7 @@
 ## Текст программы с комментариями
 Программа реализована в двух файлах: заголовочный файл **hangar.h**, включающий класс "Ангар" и описание функций для него, и главный файл **main.cpp**, содержащий функции для выполнения работы.  
   
-**hangar.h:**
+[**hangar.h:**](https://github.com/Rigrey/al-lab1/blob/a22d19d2a73770d01b129cc49aef871dd2787ef6/include/hangar.h#L1)
 ```cpp
 #ifndef HANGAR_H
 #define HANGAR_H
@@ -155,7 +155,7 @@ void customOutput(const Hangar& hangar) {
 
 ```
   
-**main.cpp:**
+[**main.cpp:**](https://github.com/Rigrey/al-lab1/blob/a22d19d2a73770d01b129cc49aef871dd2787ef6/dir/main.cpp#L1)
 ```cpp
 #include "../include/hangar.h"
 #include <vector>
