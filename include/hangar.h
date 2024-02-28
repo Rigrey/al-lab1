@@ -4,44 +4,31 @@
 #include <iostream>
 #include <fstream>
 
-/**
- * @brief Append the message to the output file and print it to the console.
- * 
- * @param message The message to be appended to the output file and printed to the console.
- */
-void customOutput(const std::string& message) {
-    // Open the output file in append mode
-    std::ofstream file("output.txt", std::ios_base::app);
-    // Print the message to the console
-    std::cout << message;
-    // Append the message to the output file
-    file << message;
-    // Close the output file
-    file.close();
-}
-
 class Hangar {
+    friend std::ostream& operator<<(std::ostream&, const Hangar&);
+    friend std::istream& operator>>(std::istream&, Hangar&);
 private:
     size_t _width; // Width of the hangar
     size_t _length; // Length of the hangar
     size_t _area; // Area of the hangar
 public:
-    Hangar();
-    Hangar(const size_t& _w, const size_t& _l);
-    void set(size_t& _w, size_t& _l);
+    Hangar(const Hangar&);
+    Hangar(const size_t& _w = 0, const size_t& _l = 0);
+    void set(size_t&, size_t&);
     size_t area();
     void print();
 };
 
 /**
- * @brief Constructor for Hangar class.
+ * @brief Constructor for the Hangar class.
+ *
+ * @param hangar The Hangar object to be copied.
  */
-Hangar::Hangar(){
-    this->_width = 0; // Initialize _width to 0
-    this->_length = 0; // Initialize _length to 0
-    this->_area = 0; // Initialize _area to 0
+Hangar::Hangar(const Hangar& hangar) {
+    this->_width = hangar._width; // Copy old _width to new hangar _width
+    this->_length = hangar._length; // Copy old _length to new hangar _length
+    this->_area = hangar._area; // Copy old _area to new hangar _area
 }
-
 /**
  * @brief Constructor for Hangar class.
  *
@@ -73,16 +60,56 @@ size_t Hangar::area() {
     return this->_area;
 }
 
-/**
- * @brief Print the details of the hangar including _width, _length and _area.
- */
-void Hangar::print() {
+std::ostream& operator<<(std::ostream& os, const Hangar& hangar) {
     // Print _width
-    customOutput("Width: " + std::to_string(this->_width) + " meters\n");
+    os << "Width: " << hangar._width << " meters\n";
     // Print _length
-    customOutput("Length: " + std::to_string(this->_length) + " meters\n");
+    os << "Length: " << hangar._length << " meters\n";
     // Print _area
-    customOutput("Area: " + std::to_string(this->_area) + " square meters\n");
+    os << "Area: " << hangar._area << " square meters\n";
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Hangar& hangar) {
+    // Get _width from istream
+    is >> hangar._width;
+    // Get _length from istream
+    is >> hangar._length;
+    // Caluculate _area of hangar
+    hangar._area = hangar._width * hangar._length;
+    return is;
+}
+
+/**
+ * @brief Append the message to the output file and print it to the console.
+ * 
+ * @param message The message to be appended to the output file and printed to the console.
+ */
+void customOutput(const std::string& message) {
+    // Open the output file in append mode
+    std::ofstream file("output.txt", std::ios_base::app);
+    // Print the message to the console
+    std::cout << message;
+    // Append the message to the output file
+    file << message;
+    // Close the output file
+    file.close();
+}
+
+/**
+ * @brief Append the hangar to the output file and print it to the console.
+ * 
+ * @param hangar The hangar to be appended to the output file and printed to the console.
+ */
+void customOutput(const Hangar& hangar) {
+    // Open the output file in append mode
+    std::ofstream file("output.txt", std::ios_base::app);
+    // Print the message to the console
+    std::cout << hangar;
+    // Append the message to the output file
+    file << hangar;
+    // Close the output file
+    file.close();
 }
 
 #endif // HANGAR_H
