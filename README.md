@@ -49,6 +49,7 @@ Hangar::Hangar(const Hangar& hangar) {
     this->_length = hangar._length; // Copy old _length to new hangar _length
     this->_area = hangar._area; // Copy old _area to new hangar _area
 }
+
 /**
  * @brief Constructor for Hangar class.
  *
@@ -80,6 +81,14 @@ size_t Hangar::area() {
     return this->_area;
 }
 
+/**
+ * @brief Overload for the << operator to print the details of the hangar.
+ * 
+ * @param os The output stream.
+ * @param hangar The Hangar object to be printed.
+ *
+ * @return The output stream.
+ */
 std::ostream& operator<<(std::ostream& os, const Hangar& hangar) {
     // Print _width
     os << "Width: " << hangar._width << " meters\n";
@@ -90,6 +99,15 @@ std::ostream& operator<<(std::ostream& os, const Hangar& hangar) {
     return os;
 }
 
+/**
+ * @brief Overload for the >> operator to read the dimensions of the hangar.
+ *
+ * @param is The input stream.
+ * @param hangar The Hangar object to be read from the input stream.
+ *
+ * @return The input stream.
+
+*/
 std::istream& operator>>(std::istream& is, Hangar& hangar) {
     // Get _width from istream
     is >> hangar._width;
@@ -161,8 +179,8 @@ void laba_dyn_array() {
   // Calculate total area and print details of each hangar
   for (size_t i = 0; i < n; ++i) {
     total_area += hangars[i]->area();
-    customOutput("\nDetails of hangar " + std::to_string(i + 1) + ": \n"); // Output message
-    std::cout << *hangars[i]; // Print details of hangar
+    customOutput("\nDetails of hangar " + std::to_string(i + 1) + ": \n");
+    customOutput(*hangars[i]);
     customOutput("\n");
   }
   customOutput("Total area of all hangars: " + std::to_string(total_area) + " square meters\n\n"); // Output message
@@ -195,7 +213,7 @@ void laba_vector() {
   for (size_t i = 0; i < n; ++i) {
     total_area += hangars[i].area();
     customOutput("\nDetails of hangar " + std::to_string(i + 1) + ": \n");
-    std::cout << hangars[i];
+    customOutput(hangars[i]);
     customOutput("\n");
   }
 
@@ -206,7 +224,7 @@ int main() {
   std::ios_base::sync_with_stdio(false); // Disable synchronization with C I/O (Speed up work of cin and cout)
   std::ofstream output("output.txt"); // Open output file to clear it from last run
   output.close(); // Close output file after clearing it
-  
+
   customOutput("Here is the implemention of Hangar class(V20) with vector \n");
   laba_vector();
 
@@ -214,6 +232,7 @@ int main() {
   laba_dyn_array();
   return 0;
 }
+
 
 ```
 ## Ручной расчет контрольного примера
