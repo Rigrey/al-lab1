@@ -22,8 +22,8 @@ void laba_dyn_array() {
   // Calculate total area and print details of each hangar
   for (size_t i = 0; i < n; ++i) {
     total_area += hangars[i]->area();
-    customOutput("\nDetails of hangar " + std::to_string(i + 1) + ": \n"); // Output message
-    std::cout << *hangars[i]; // Print details of hangar
+    customOutput("\nDetails of hangar " + std::to_string(i + 1) + ": \n");
+    customOutput(*hangars[i]);
     customOutput("\n");
   }
   customOutput("Total area of all hangars: " + std::to_string(total_area) + " square meters\n\n"); // Output message
@@ -56,7 +56,7 @@ void laba_vector() {
   for (size_t i = 0; i < n; ++i) {
     total_area += hangars[i].area();
     customOutput("\nDetails of hangar " + std::to_string(i + 1) + ": \n");
-    std::cout << hangars[i];
+    customOutput(hangars[i]);
     customOutput("\n");
   }
 
@@ -67,7 +67,7 @@ int main() {
   std::ios_base::sync_with_stdio(false); // Disable synchronization with C I/O (Speed up work of cin and cout)
   std::ofstream output("output.txt"); // Open output file to clear it from last run
   output.close(); // Close output file after clearing it
-  
+
   customOutput("Here is the implemention of Hangar class(V20) with vector \n");
   laba_vector();
 

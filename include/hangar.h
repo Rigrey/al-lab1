@@ -29,6 +29,7 @@ Hangar::Hangar(const Hangar& hangar) {
     this->_length = hangar._length; // Copy old _length to new hangar _length
     this->_area = hangar._area; // Copy old _area to new hangar _area
 }
+
 /**
  * @brief Constructor for Hangar class.
  *
@@ -60,6 +61,14 @@ size_t Hangar::area() {
     return this->_area;
 }
 
+/**
+ * @brief Overload for the << operator to print the details of the hangar.
+ * 
+ * @param os The output stream.
+ * @param hangar The Hangar object to be printed.
+ *
+ * @return The output stream.
+ */
 std::ostream& operator<<(std::ostream& os, const Hangar& hangar) {
     // Print _width
     os << "Width: " << hangar._width << " meters\n";
@@ -70,6 +79,15 @@ std::ostream& operator<<(std::ostream& os, const Hangar& hangar) {
     return os;
 }
 
+/**
+ * @brief Overload for the >> operator to read the dimensions of the hangar.
+ *
+ * @param is The input stream.
+ * @param hangar The Hangar object to be read from the input stream.
+ *
+ * @return The input stream.
+
+*/
 std::istream& operator>>(std::istream& is, Hangar& hangar) {
     // Get _width from istream
     is >> hangar._width;
